@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row">
+    <nav class="col col-20">
+      <h2>Styleguide</h2>
+      <ul>
+        <li ng-repeat="section in styleguide.sections">
+          <a ng-href="#/view1#{{section.reference}}" ng-bind="section.header"></a>
+        </li>
+      </ul>
+    </nav>
+    <div class="col">
+      <h3>Sections</h3>
+      <ul>
+        <li id="{{section.reference}}" ng-repeat="section in styleguide.sections" style="margin-bottom: 10px">
+          <b>Header:</b> {{section.header}}<br/>
+          <b style="margin-top: 10px">Description:</b> 
+          <div style="margin-bottom: 10px" btf-markdown="section.description"></div>
+          <b ng-show="section.modifiers">Modifiers: </b>
+          <ul ng-show="section.modifiers">
+            <li ng-repeat="modifier in section.modifiers" ng-bind="modifier"></li>
+          </ul>
+          <b>Markup:</b> {{section.markup}}<br/>
+          <b>Referece:</b> {{section.reference}}<br/>
+          <b>RefDepth:</b> {{section.refDepth}}<br/>
+          <b>Deprecated:</b> {{section.deprecated}}<br/>
+          <b>Experimental:</b> {{section.experimental}}<br/>
+          <hr ng-hide="$last">
+        </li>
+      </ul>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col col-offset-20">
+      <p>Files</p>
+      <ul>
+        <li ng-repeat="file in styleguide.files" ng-bind="file"></li>
+      </ul>
+    </div>
+  </div>
+</div>
