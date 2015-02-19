@@ -4,7 +4,7 @@
   "description": "An Living Styleguide Skeletton created on top of KSS and AngularJS",
   "author": "Thiago Felix <felixthi@gmail.com>",
   "scripts": {
-    "start": "grunt work"
+    "start": "./node_modules/.bin/grunt work"
   },
   "repository": {
     "type": "git",
@@ -16,6 +16,7 @@
   "devDependencies": {
     "bower": "^1.3.12",
     "grunt": "^0.4.5",
+    "grunt-cli": "~0.1.13",
     "grunt-bower-install": "^1.6.0",
     "grunt-browser-sync": "^1.5.3",
     "grunt-build-control": "^0.1.3",
